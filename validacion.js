@@ -16,3 +16,23 @@ mensaje.style.color = "green";
 }
 this.value = this.value.replace(/[^a-zA-Z]/g, "")
 });
+
+let password = document.getElementById("password");
+let mensajePass = document.getElementById("mensajePass");
+
+password.addEventListener("input", function () {
+
+    if (this.value.length > 10) {
+        mensajePass.textContent = "mal";
+        mensajePass.style.color = "red";
+    } 
+    else if (this.value.length > 0) {
+        mensajePass.textContent = "bien";
+        mensajePass.style.color = "green";
+    } 
+    else {
+        mensajePass.textContent = "campo requerido";
+        mensajePass.style.color = "orange";
+    }
+
+});
